@@ -10,11 +10,6 @@
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Views\" />
     <Folder Include="Models\ViewComponents\" />
-    <Folder Include="Views\Shared\" />
-    <Folder Include="wwwroot\css\" />
-    <Folder Include="wwwroot\images\" />
-    <Folder Include="wwwroot\js\" />
-    <Folder Include="wwwroot\sass\" />
     <Folder Include="Controllers\" />
     <Folder Include="Domain\" />
     <Folder Include="Service\" />
