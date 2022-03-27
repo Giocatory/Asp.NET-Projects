@@ -2,37 +2,38 @@
 
 namespace UsefulArticles
 {
-    public class Startup
-    {
-        public IConfiguration Configuration { get; set; }
-        public Startup(IConfiguration configuration) => Configuration = configuration;
+	public class Startup
+	{
+		public IConfiguration Configuration { get; set; }
 
-        public void ConfigureServices(IServiceCollection services)
-        {
-            // Подключаем конфиг из appsettings.json
-            Configuration.Bind("Projecet", new Config());
+		public Startup(IConfiguration configuration) => Configuration = configuration;
 
-            // Добавляем поддержку контроллеров и представлений (mvc)
-            services.AddControllersWithViews().AddSessionStateTempDataProvider();
-        }
+		public void ConfigureServices(IServiceCollection services)
+		{
+			// Подключаем конфиг из appsettings.json
+			Configuration.Bind("Projecet", new Config());
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            // порядок регистрации middleware очень важен!!!!!!!
+			// Добавляем поддержку контроллеров и представлений (mvc)
+			services.AddControllersWithViews().AddSessionStateTempDataProvider();
+		}
 
-            // для отображения ошибок в процессе разработки
-            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+		{
+			// порядок регистрации middleware очень важен!!!!!!!
 
-            app.UseRouting();
+			// для отображения ошибок в процессе разработки
+			if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
 
-            // подключение поддержки статичных файлов в приложении (css, js ...) папка wwwroot
-            app.UseStaticFiles();
+			app.UseRouting();
 
-            // регистрация маршрутов (endpoints)
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
-            });
-        }
-    }
+			// подключение поддержки статичных файлов в приложении (css, js ...) папка wwwroot
+			app.UseStaticFiles();
+
+			// регистрация маршрутов (endpoints)
+			app.UseEndpoints(endpoints =>
+			{
+				endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+			});
+		}
+	}
 }
