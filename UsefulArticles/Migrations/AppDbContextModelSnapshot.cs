@@ -52,7 +52,7 @@ namespace UsefulArticles.Migrations
                         new
                         {
                             Id = "8af10569-b018-4fe7-a380-7d6a14c70b74",
-                            ConcurrencyStamp = "358822c2-2a38-4831-9266-a74c6dc8bec7",
+                            ConcurrencyStamp = "5e1684d9-3691-4fa9-877a-1bcd57da5e31",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         });
@@ -152,13 +152,13 @@ namespace UsefulArticles.Migrations
                         {
                             Id = "3b62472e-4f66-49fa-a20f-e7685b9565d8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "94511963-e55b-40b8-a5e6-a6f2bea6d56f",
+                            ConcurrencyStamp = "fa52c79a-1e91-4068-b0a4-4191d61109aa",
                             Email = "giocatory@yandex.ru",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "GIOCATORY@YANDEX.RU",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGbmoabblN81sCjz44YEEVqxJauScMFAAAERczgQGOH+fWGG6vmRk/BwfQq9ybdtQQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELraMz//jg8uOGr42ChtlmRIyEi58IlUypPitwJXk+bgMTrR5PY7r1nrD7SNmFKPIQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -333,7 +333,7 @@ namespace UsefulArticles.Migrations
                         {
                             Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2022, 3, 27, 18, 11, 44, 563, DateTimeKind.Utc).AddTicks(5668),
+                            DateAdded = new DateTime(2022, 3, 27, 19, 48, 29, 922, DateTimeKind.Utc).AddTicks(741),
                             Text = "Содержание заполняется администратором",
                             Title = "Главная"
                         },
@@ -341,7 +341,7 @@ namespace UsefulArticles.Migrations
                         {
                             Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
                             CodeWord = "PageArticles",
-                            DateAdded = new DateTime(2022, 3, 27, 18, 11, 44, 563, DateTimeKind.Utc).AddTicks(5699),
+                            DateAdded = new DateTime(2022, 3, 27, 19, 48, 29, 922, DateTimeKind.Utc).AddTicks(777),
                             Text = "Содержание заполняется администратором",
                             Title = "Мои статьи"
                         },
@@ -349,7 +349,7 @@ namespace UsefulArticles.Migrations
                         {
                             Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2022, 3, 27, 18, 11, 44, 563, DateTimeKind.Utc).AddTicks(5716),
+                            DateAdded = new DateTime(2022, 3, 27, 19, 48, 29, 922, DateTimeKind.Utc).AddTicks(794),
                             Text = "Содержание заполняется администратором",
                             Title = "Контакты"
                         });

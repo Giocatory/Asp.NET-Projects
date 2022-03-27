@@ -10,8 +10,13 @@ namespace UsefulArticles
     public class Startup
     {
         public IConfiguration Configuration { get; set; }
+        public static IConfiguration? StaticConfig { get; private set; }
 
-        public Startup(IConfiguration configuration) => Configuration = configuration;
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+            StaticConfig = configuration;
+        }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -57,8 +62,6 @@ namespace UsefulArticles
 
             // для отображения ошибок в процессе разработки
             if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
-
-
 
             // подключение поддержки статичных файлов в приложении (css, js ...) папка wwwroot
             app.UseStaticFiles();
