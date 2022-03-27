@@ -6,7 +6,7 @@ namespace UsefulArticles.Domain.Repositories.EntityFramework
 {
     public class EFTextFieldsRepository : ITextFieldsRepository
     {
-        private readonly AppDbContext context;
+        private readonly AppDbContext? context;
 
         public EFTextFieldsRepository(AppDbContext context) => this.context = context;
 
