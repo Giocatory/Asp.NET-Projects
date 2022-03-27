@@ -1,9 +1,17 @@
-﻿namespace UsefulArticles
+﻿using UsefulArticles.Service;
+
+namespace UsefulArticles
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; set; }
+        public Startup(IConfiguration configuration) => Configuration = configuration;
+
         public void ConfigureServices(IServiceCollection services)
         {
+            // Подключаем конфиг из appsettings.json
+            Configuration.Bind("Projecet", new Config());
+
             // Добавляем поддержку контроллеров и представлений (mvc)
             services.AddControllersWithViews().AddSessionStateTempDataProvider();
         }
