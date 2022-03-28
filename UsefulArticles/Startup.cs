@@ -52,6 +52,18 @@ namespace UsefulArticles
                 options.SlidingExpiration = true;
             });
 
+            // Настройка политики авторизации для Admin area
+            services.AddAuthorization(x =>
+            {
+                x.AddPolicy("AdminArea", policy => { policy.RequireRole("admin"); });
+            });
+
+            // Добавление сервисов для контроллеров и представлений MVC
+            services.AddControllersWithViews(x =>
+           {
+               x.Conventions.Add(new AdminAreaAuthorization("Admin", "AdminArea"));
+           }).AddSessionStateTempDataProvider();
+
             // Добавляем поддержку контроллеров и представлений (mvc)
             services.AddControllersWithViews().AddSessionStateTempDataProvider();
         }
@@ -77,6 +89,7 @@ namespace UsefulArticles
             // регистрация маршрутов (endpoints)
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute("admin", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }
