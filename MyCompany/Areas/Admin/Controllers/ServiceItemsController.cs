@@ -1,11 +1,11 @@
-﻿using System;
-using System.IO;
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyCompany.Domain;
 using MyCompany.Domain.Entities;
 using MyCompany.Service;
+using System;
+using System.IO;
 
 namespace MyCompany.Areas.Admin.Controllers
 {
@@ -14,6 +14,7 @@ namespace MyCompany.Areas.Admin.Controllers
     {
         private readonly DataManager dataManager;
         private readonly IWebHostEnvironment hostingEnvironment;
+
         public ServiceItemsController(DataManager dataManager, IWebHostEnvironment hostingEnvironment)
         {
             this.dataManager = dataManager;
@@ -25,6 +26,7 @@ namespace MyCompany.Areas.Admin.Controllers
             var entity = id == default ? new ServiceItem() : dataManager.ServiceItems.GetServiceItemById(id);
             return View(entity);
         }
+
         [HttpPost]
         public IActionResult Edit(ServiceItem model, IFormFile titleImageFile)
         {

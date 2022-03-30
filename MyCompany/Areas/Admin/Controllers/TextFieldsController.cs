@@ -9,6 +9,7 @@ namespace MyCompany.Areas.Admin.Controllers
     public class TextFieldsController : Controller
     {
         private readonly DataManager dataManager;
+
         public TextFieldsController(DataManager dataManager)
         {
             this.dataManager = dataManager;

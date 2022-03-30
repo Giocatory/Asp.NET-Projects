@@ -8,7 +8,7 @@ namespace MyCompany.Domain.Entities
         protected EntityBase() => DateAdded = DateTime.UtcNow;
 
         [Required]
-        public Guid Id { get;set; }
+        public Guid Id { get; set; }
 
         [Display(Name = "Название (заголовок)")]
         public virtual string Title { get; set; }

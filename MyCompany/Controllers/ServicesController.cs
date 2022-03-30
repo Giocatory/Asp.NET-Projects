@@ -1,6 +1,6 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MyCompany.Domain;
+using System;
 
 namespace MyCompany.Controllers
 {

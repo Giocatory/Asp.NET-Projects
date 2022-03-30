@@ -1,8 +1,8 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MyCompany.Models;
+using System.Threading.Tasks;
 
 namespace MyCompany.Controllers
 {
@@ -11,6 +11,7 @@ namespace MyCompany.Controllers
     {
         private readonly UserManager<IdentityUser> userManager;
         private readonly SignInManager<IdentityUser> signInManager;
+
         public AccountController(UserManager<IdentityUser> userMgr, SignInManager<IdentityUser> signinMgr)
         {
             userManager = userMgr;
@@ -23,6 +24,7 @@ namespace MyCompany.Controllers
             ViewBag.returnUrl = returnUrl;
             return View(new LoginViewModel());
         }
+
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl)

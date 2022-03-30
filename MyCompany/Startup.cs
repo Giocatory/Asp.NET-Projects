@@ -16,6 +16,7 @@ namespace MyCompany
     public class Startup
     {
         public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration) => Configuration = configuration;
 
         public void ConfigureServices(IServiceCollection services)
@@ -72,7 +73,7 @@ namespace MyCompany
             //!!! порядок регистрации middleware очень важен
 
             //в процессе разработки нам важно видеть какие именно ошибки
-            if (env.IsDevelopment()) 
+            if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
 
             //подключаем поддержку статичных файлов в приложении (css, js и т.д.)

@@ -1,6 +1,6 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MyCompany.Domain;
+using System.Threading.Tasks;
 
 namespace MyCompany.Models.ViewComponents
 {
@@ -15,7 +15,7 @@ namespace MyCompany.Models.ViewComponents
 
         public Task<IViewComponentResult> InvokeAsync()
         {
-            return Task.FromResult((IViewComponentResult) View("Default", dataManager.ServiceItems.GetServiceItems()));
+            return Task.FromResult((IViewComponentResult)View("Default", dataManager.ServiceItems.GetServiceItems()));
         }
     }
 }

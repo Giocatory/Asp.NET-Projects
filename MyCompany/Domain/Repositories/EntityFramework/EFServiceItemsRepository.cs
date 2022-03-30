@@ -1,14 +1,15 @@
-﻿using System;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using MyCompany.Domain.Entities;
 using MyCompany.Domain.Repositories.Abstract;
+using System;
+using System.Linq;
 
 namespace MyCompany.Domain.Repositories.EntityFramework
 {
     public class EFServiceItemsRepository : IServiceItemsRepository
     {
         private readonly AppDbContext context;
+
         public EFServiceItemsRepository(AppDbContext context)
         {
             this.context = context;
